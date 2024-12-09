@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useCart } from "../context/ShoppingCartContext";
-import ItemCard from "../components/ItemCard";
+import ItemCart from "../components/ItemCard";
 
 interface Item {
   id: number;
@@ -103,7 +103,7 @@ const HomePage: React.FC = () => {
 
     <div className="item-grid">
         {filteredItems.map((item) => (
-            <ItemCard
+            <ItemCart
             key={item.id}
             id={item.id}
             title={item.title}
@@ -112,7 +112,7 @@ const HomePage: React.FC = () => {
             image={item.image}
             addToCart = {() => addToCart(item)}
             removeFromCart = {() => removeFromCart(item.id)}
-            ></ItemCard>
+            ></ItemCart>
         ))}
     </div>
     </div>
